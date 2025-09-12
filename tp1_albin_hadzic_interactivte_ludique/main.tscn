@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://berf1okf4qk82"]
+
+[ext_resource type="Script" uid="uid://jty4f4jcopwo" path="res://control.gd" id="1_h2yge"]
+[ext_resource type="AudioStream" uid="uid://dc17wlg0lurkn" path="res://assets/audio/z_sound.mp3" id="1_ig7tw"]
+[ext_resource type="AudioStream" uid="uid://brqlna2bwk20r" path="res://assets/audio/x_sound.mp3" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://do0mxylma2u4w" path="res://assets/images/image_verte.jpg" id="4_1bvp3"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Control" type="Control" parent="Node"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_h2yge")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node/Control"]
+layout_mode = 0
+offset_top = -384.0
+offset_right = 67547.0
+offset_bottom = 14270.0
+text = "Touches Z & X
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioPlayerZ" type="AudioStreamPlayer2D" parent="Node/Control"]
+stream = ExtResource("1_ig7tw")
+volume_db = -3.0
+
+[node name="AudioPlayerX" type="AudioStreamPlayer2D" parent="Node/Control"]
+stream = ExtResource("2_0xm2m")
+volume_db = 5.0
+
+[node name="background" type="Sprite2D" parent="Node/Control"]
+position = Vector2(640, -25792)
+scale = Vector2(16.7727, 18.5301)
+texture = ExtResource("4_1bvp3")
